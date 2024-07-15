@@ -25,9 +25,8 @@ app.use(limiter);
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const dev_db_url = "mongodb+srv://suhailkhan250899:59NT3KAsKDv6di1k@cluster0.unlsve8.mongodb.net/local_library?retryWrites=true&w=majority&appName=Cluster0";
 
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI; //environment variable - created on production environment
 
 main().catch((err) => console.log(err));
 async function main() {
